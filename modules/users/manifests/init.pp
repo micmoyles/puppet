@@ -9,7 +9,7 @@ class users {
         home => '/home/mmoyles',
         ensure => present,
 	password => '$1$rLrcsrrZ$/VnY4X1rlaIJ31FMBiEld0',
-        comment => 'Michael Moyles, test user',
+        comment => 'Michael Moyles',
         shell => '/bin/bash',
         groups => ['svn','puppet','sudo','erova']
     }
@@ -18,7 +18,7 @@ class users {
         home => '/home/erova',
         ensure => present,
 	password => '$1$JaQmbDDv$4XzeggNopjsO4507Vq0uT/',
-        comment => 'Erova, test user',
+        comment => 'Erova, shared user',
         shell => '/bin/bash',
         groups => ['svn','erova']
     }
