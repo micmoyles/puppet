@@ -5,6 +5,7 @@ class packages {
 	package { "bsd-mailx": ensure => installed }
 	package { "cpuset": ensure => installed }
 	package { "keepalived": ensure => installed }
+	package { "tree": ensure => latest }
 }
 class workstation_packages {
 	notify {'Hello from workstation packages!': withpath => true, }
@@ -14,4 +15,5 @@ class workstation_packages {
 	package { "puppet": ensure => latest }
 	package { "tree": ensure => latest }
 	package { "python-tk": ensure => latest }
+	package { "git": ensure => installed }
 }
