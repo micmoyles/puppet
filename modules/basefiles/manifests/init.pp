@@ -18,7 +18,7 @@ class myfiles::base {
 		owner => root,
 		group => root,
 		mode  => 0755,
-		source => 'puppet:///modules/basefiles/vim.local';
+		source => 'puppet:///modules/basefiles/vimrc.local';
 	}
 	}
 
