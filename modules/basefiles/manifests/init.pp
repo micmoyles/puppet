@@ -13,7 +13,7 @@ class myfiles::base {
 		mode  => 0755,
 		source => 'puppet:///modules/basefiles/test_bashrc';
 	}
-		file { '/etc/vim/vim.local':
+		file { '/etc/vim/vimrc.local':
 		ensure => file,
 		owner => root,
 		group => root,
