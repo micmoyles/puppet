@@ -2,8 +2,9 @@ class packages {
 	package { "vim": ensure => installed }
 	package { "subversion": ensure => installed }
 	package { "telnet": ensure => installed }
-	package { "tree": ensure => latest }
-	package { "git": ensure => installed }
+	package { "tree": ensure => installed }
+	package { "git": ensure => latest }
+	package { "pylint": ensure => latest }
 }
 class workstation_packages inherits packages {
 	notify {'Hello from workstation packages!': withpath => true, }
