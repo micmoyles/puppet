@@ -1,0 +1,14 @@
+{
+  "name": "erova-boot",
+  "version": "0.1.0",
+  "author": "mmoyles",
+  "summary": "custom files run during boot and user login",
+  "license": "GNU",
+  "source": "",
+  "project_page": "ask Michael",
+  "issues_url": "ask Michael",
+  "dependencies": [
+    {"name":"puppetlabs-stdlib","version_requirement":">= 1.0.0"}
+  ]
+}
+
