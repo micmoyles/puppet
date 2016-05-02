@@ -36,6 +36,13 @@
 # Copyright 2016 Your name here, unless otherwise noted.
 #
 class boot {
+	file{'/etc/motd':
+		ensure => file,
+		owner => root,
+		group => root,
+		mode  => 0755,
+		source => 'puppet:///motd';
 
+}
 
 }
