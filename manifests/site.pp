@@ -3,8 +3,7 @@ import 'users'
 import 'basefiles'
 import 'directories'
 import 'packages'
-import 'boot'
-import '::rabbitmq'
+import 'erova-boot'
 
 class users_and_groups {
 	group { "svn" : ensure => present }
@@ -15,15 +14,15 @@ node 'raspberrypi.chello.ie' {
 	include users::pi 
 	include packages
 	include users_and_groups
-	include home_dirs
+	include directories::home::pi
 }
 node 'knopfler.chello.ie' {
 	include users_and_groups
 	include workstation_packages 
 }
 node default {
-	include packages
-	include users_and_groups
-	include home_dirs
 	include users
+	include users_and_groups
+	include packages
+	include directories::home
 }
