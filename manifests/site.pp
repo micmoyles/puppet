@@ -4,6 +4,7 @@ import 'basefiles'
 import 'directories'
 import 'packages'
 import 'boot'
+import '::rabbitmq'
 
 class users_and_groups {
 	group { "svn" : ensure => present }
