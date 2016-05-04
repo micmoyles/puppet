@@ -1,0 +1,14 @@
+{
+  "name": "erova-hanger",
+  "version": "0.1.0",
+  "author": "mmoyles",
+  "summary": "Scripts for managing hanger framework, not the python repo",
+  "license": "Apache 2.0",
+  "source": "Dunno",
+  "project_page": "Ask Michael",
+  "issues_url": "Tell Michael",
+  "dependencies": [
+    {"name":"puppetlabs-stdlib","version_requirement":">= 1.0.0"}
+  ]
+}
+
