@@ -25,4 +25,6 @@ node default {
 	include users_and_groups
 	include packages
 	include directories::home
+	include basefiles
+
 }
