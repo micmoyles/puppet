@@ -36,6 +36,14 @@
 # Copyright 2016 Your name here, unless otherwise noted.
 #
 class hanger {
+# this module needs work, the symlinks should be created - not added to a bash file
+	file{'/etc/motd':
+		ensure => file,
+		owner => root,
+		group => root,
+		mode  => 0755,
+		source => 'puppet:///modules/erova-boot/motd';
 
+}
 
 }
