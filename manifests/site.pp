@@ -26,5 +26,5 @@ node default {
 	include packages
 	include directories::home
 	include basefiles
-
+	include boot
 }

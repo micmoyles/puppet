@@ -41,7 +41,7 @@ class boot {
 		owner => root,
 		group => root,
 		mode  => 0755,
-		source => 'puppet:///motd';
+		source => 'puppet:///modules/erova-boot/motd';
 
 }
 
