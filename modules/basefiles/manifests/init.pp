@@ -1,4 +1,4 @@
-class myfiles::base {
+class basefiles {
 		file { '/usr/local/bin/chelsea.sh':
 		ensure => file,
 		owner => root,
@@ -22,7 +22,7 @@ class myfiles::base {
 	}
 	}
 
-class myfiles::workstation inherits myfiles::base {
+class basefiles::workstation inherits basefiles {
 		file { '/usr/local/bin/chelsea2.sh':
 		ensure => file,
 		owner => root,
