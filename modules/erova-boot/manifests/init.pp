@@ -48,7 +48,7 @@ class boot {
 		owner => root,
 		group => root,
 		mode  => 0755,
-		source => 'puppet:///modules/erova-boot/bashrc-pi';
+		source => 'puppet:///modules/erova-boot/bashrc-all';
 }
 
 }
