@@ -50,5 +50,12 @@ class boot {
 		mode  => 0755,
 		source => 'puppet:///modules/erova-boot/bashrc-all';
 }
+	file{'/etc/bash-aliases':
+		ensure => file,
+		owner => root,
+		group => root,
+		mode  => 0755,
+		source => 'puppet:///modules/erova-boot/bash-aliases';
+}
 
 }
