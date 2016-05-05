@@ -29,11 +29,11 @@
 #
 # === Authors
 #
-# Author Name <author@domain.com>
+# Author Name <mike@erova.com>
 #
 # === Copyright
 #
-# Copyright 2016 Your name here, unless otherwise noted.
+# Copyright 2016 Michael Moyles, unless otherwise noted.
 #
 class boot {
 	file{'/etc/motd':
@@ -42,7 +42,13 @@ class boot {
 		group => root,
 		mode  => 0755,
 		source => 'puppet:///modules/erova-boot/motd';
-
+}
+	file{'/etc/bash.bashrc':
+		ensure => file,
+		owner => root,
+		group => root,
+		mode  => 0755,
+		source => 'puppet:///modules/erova-boot/bashrc-pi';
 }
 
 }
