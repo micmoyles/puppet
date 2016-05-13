@@ -17,4 +17,5 @@ class server_packages inherits packages {
 	package { "bsd-mailx": ensure => installed }
 	package { "cpuset": ensure => installed }
 	package { "keepalived": ensure => installed }
+	package { "lldpd": ensure => purged }
 }

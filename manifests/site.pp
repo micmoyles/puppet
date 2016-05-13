@@ -12,7 +12,7 @@ class users_and_groups {
 
 node 'raspberrypi.chello.ie' {
 	include users::pi 
-	include packages
+	include server_packages
 	include users_and_groups
 	include directories::home::pi
 }
