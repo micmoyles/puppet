@@ -13,7 +13,7 @@ class workstation_packages inherits packages {
 	package { "python-tk": ensure => latest }
 }
 class server_packages inherits packages {
-	notify {'Hello from server packages!': withpath => true, }
+	notify  {'Hello from server packages!': withpath => true, }
 	package { "bsd-mailx": ensure => installed }
 	package { "cpuset": ensure => installed }
 	package { "keepalived": ensure => installed }

@@ -1,6 +1,6 @@
 # == Class: hanger
 #
-# Full description of class hanger here.
+#  This will install the database and configure the front end webserver and script used to access it. 
 #
 # === Parameters
 #
@@ -29,7 +29,7 @@
 #
 # === Authors
 #
-# Author Name <author@domain.com>
+# Author Name <mike@erova-it.ie>
 #
 # === Copyright
 #
@@ -37,13 +37,5 @@
 #
 class hanger {
 # this module needs work, the symlinks should be created - not added to a bash file
-	file{'/etc/motd':
-		ensure => file,
-		owner => root,
-		group => root,
-		mode  => 0755,
-		source => 'puppet:///modules/erova-boot/motd';
-
-}
-
+	package { "mysqld": ensure => present }
 }
