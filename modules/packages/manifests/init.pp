@@ -15,6 +15,7 @@ class workstation_packages inherits packages {
 class server_packages inherits packages {
 	notify  {'Hello from server packages!': withpath => true, }
 	package { "bsd-mailx": ensure => installed }
+	package { "postfix": ensure => installed }
 	package { "cpuset": ensure => installed }
 	package { "keepalived": ensure => installed }
 	package { "lldpd": ensure => purged }
