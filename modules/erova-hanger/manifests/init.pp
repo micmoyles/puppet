@@ -37,7 +37,7 @@
 #
 class hanger {
 # this module needs work, the symlinks should be created - not added to a bash file
-	package { "mysqld": ensure => present }
+	package { "mysql-server": ensure => present }
 	package { "python-bs4": ensure => present }
 	package { "postgresql": ensure => present }
 	package { "postgresql-contrib": ensure => present }
