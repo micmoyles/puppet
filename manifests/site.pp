@@ -4,6 +4,7 @@ import 'basefiles'
 import 'directories'
 import 'packages'
 import 'erova-boot'
+import 'erova-hanger'
 
 class users_and_groups {
 	group { "svn" : ensure => present }
@@ -15,10 +16,12 @@ node 'raspberrypi.chello.ie' {
 	include server_packages
 	include users_and_groups
 	include directories::home::pi
+	include boot
 }
 node 'knopfler.chello.ie' {
 	include users_and_groups
 	include workstation_packages 
+	include hanger
 }
 node default {
 	include users
