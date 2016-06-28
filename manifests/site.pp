@@ -5,6 +5,7 @@ import 'directories'
 import 'packages'
 import 'erova-boot'
 import 'erova-hanger'
+#test comment
 
 class users_and_groups {
 	group { "svn" : ensure => present }
