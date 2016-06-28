@@ -5,7 +5,7 @@ alias cgid='cd /usr/lib/cgi-bin/'
 alias ll='ls -ltr'
 if [ `whoami` == 'mmoyles' ]
 then 
-	alias goev='ssh -i /home/mmoyles/.ssh/amazon_linux.pem' ubuntu@52.30.209.32'
+	alias goev='ssh -i /home/mmoyles/.ssh/amazon_linux.pem ubuntu@52.30.209.32'
 fi
 TMOUT=3000
 readonly TMOUT
