@@ -3,6 +3,8 @@ alias logs='cd /var/log/'
 alias data='cd /mnt/data'
 alias cgid='cd /usr/lib/cgi-bin/'
 alias ll='ls -ltr'
+alias gopup='cd /etc/puppet'
+alias puprun='sudo puppet agent -t'
 if [ `whoami` == 'mmoyles' ]
 then 
 	alias goev='ssh -i /home/mmoyles/.ssh/amazon_linux.pem ubuntu@52.30.209.32'
