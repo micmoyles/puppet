@@ -65,13 +65,23 @@ class boot {
 		source => 'puppet:///modules/erova-boot/profile-all';
 }	
 	case $hostname{
-	raspberrypi:
+	raspberrypi: {
 		file{'/etc/iampi':
 			ensure => file,
 			owner => root,
 			group => root,
 			mode  => 0755,
 			source => 'puppet:///modules/erova-boot/profile-all';
-}	
+		}
+		}	
+	puppet: {
+		file{'/etc/iampuppet':
+			ensure => file,
+			owner => root,
+			group => root,
+			mode  => 0755,
+			source => 'puppet:///modules/erova-boot/profile-all';
+		    }	
+		}
 }
 }
