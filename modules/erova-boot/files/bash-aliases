@@ -9,6 +9,12 @@ if [ `whoami` == 'mmoyles' ]
 then 
 	alias goev='ssh -i /home/mmoyles/.ssh/amazon_linux.pem ubuntu@52.30.209.32'
 fi
+if [ $HOSTNAME == 'puppet' ]
+then
+	alias gopup='cd /etc/puppet'
+else 
+	alias gopup='cd /home/mmoyles/repos/puppet'
+fi
 TMOUT=3000
 readonly TMOUT
 export TMOUT
