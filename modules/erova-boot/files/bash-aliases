@@ -2,7 +2,7 @@ alias web='cd /var/www/'
 alias logs='cd /var/log/'
 alias data='cd /mnt/data'
 alias cgid='cd /usr/lib/cgi-bin/'
-alias ll='ls -ltr'
+alias ll='ls -ltr --color'
 alias gopup='cd /etc/puppet'
 alias puprun='sudo puppet agent -t'
 if [ `whoami` == 'mmoyles' ]
