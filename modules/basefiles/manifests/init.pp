@@ -1,11 +1,4 @@
 class basefiles {
-		file { '/usr/local/bin/chelsea.sh':
-		ensure => file,
-		owner => root,
-		group => root,
-		mode  => 0755,
-		source => 'puppet:///modules/basefiles/chelsea.sh';
-	}
 		file { '/etc/test_bashrc':
 		ensure => file,
 		owner => root,
