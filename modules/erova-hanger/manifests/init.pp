@@ -41,4 +41,24 @@ class hanger {
 	package { "python-bs4": ensure => present }
 	package { "postgresql": ensure => present }
 	package { "postgresql-contrib": ensure => present }
+	file { "erova packages directory":
+		path => '/home/erova/packages',
+		ensure => directory,
+		mode => 0755,
+		owner => erova,
+		group => erova
+}
+	file { "erova python  packages directory":
+		path => '/home/erova/packages/python',
+		ensure => directory,
+		mode => 0755,
+		owner => erova,
+		group => erova
+}
+        file { "stomp files":
+		require => File['/home/erova/packages/python']
+		path => '/home/erova/packages/python/stomp',
+		source => 'puppet://modules/erova-hanger/stomp/',
+		recurse => true,
+ }
 }
