@@ -7,6 +7,14 @@ class directories::home {
 		owner => erova, group => erova, mode => 0755,
 		ensure => "directory",
 	}
+	file { '/home/mbrennan':
+		owner => mbrennan, group => mbrennan, mode => 0755,
+		ensure => "directory",
+	}
+	file { '/home/mgolden':
+		owner => mgolden, group => mgolden, mode => 0755,
+		ensure => "directory",
+	}
 }
 class directories::home::pi inherits directories::home {
 	file { '/home/michael':
