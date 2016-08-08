@@ -27,6 +27,7 @@ node 'ip-172-31-45-132' {
 	include users_and_groups
 	include server_packages
 	include hanger
+	include boot 
 }
 node default {
 	include users
