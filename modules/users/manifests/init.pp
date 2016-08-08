@@ -59,7 +59,7 @@ class users::erova inherits users {
    		home => '/home/mbrennan',
         	ensure => present,
 		password => '$1$uPryyIuC$VE2MWYR9t7MQFLCyNUq/B1',#bmich1
-        	comment => 'Michael Brennan'
+        	comment => 'Michael Brennan',
         	shell => '/bin/bash',
         	groups => ['svn','erova','sudo']
    	 }

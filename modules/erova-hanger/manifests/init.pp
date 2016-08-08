@@ -14,6 +14,7 @@
 #
 # Here you should define a list of variables that this module would require.
 #
+$remit_directories = ['/data','/data/REMIT','/data/REMIT/archive','/data/REMIT/transmit']
 # [*sample_variable*]
 #   Explanation of how this variable affects the funtion of this class and if
 #   it has a default. e.g. "The parameter enc_ntp_servers must be set by the
@@ -48,7 +49,7 @@ class hanger {
 		owner => erova,
 		group => erova
 }
-	file { "erova python  packages directory":
+	file { "erova python packages directory":
 		path => '/home/erova/packages/python',
 		ensure => directory,
 		mode => 0755,
@@ -72,15 +73,7 @@ class hanger {
 		require => File['/usr/local/bin/setup_mysqldbs.sh'],
 		command => '/usr/local/bin/setup_mysqldbs.sh'
 }
-	file { "Directories needed for REMIT message handling":
-		file => '/data/REMIT/transmit',
-		ensure => directory,
-		owner => erova,
-		group => erova,
-		mode => 0755		
-}
-	file { "Directories needed for REMIT message handling":
-		file => '/data/REMIT/archive',
+	file { $remit_directories:
 		ensure => directory,
 		owner => erova,
 		group => erova,
