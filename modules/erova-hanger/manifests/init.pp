@@ -56,9 +56,20 @@ class hanger {
 		group => erova
 }
         file { "stomp files":
-		require => File['/home/erova/packages/python']
+		require => File['/home/erova/packages/python'],
 		path => '/home/erova/packages/python/stomp',
-		source => 'puppet://modules/erova-hanger/stomp/',
+		source => 'puppet:///modules/erova-hanger/stomp/',
 		recurse => true,
  }
+        file { "database configuration script ":
+		path => '/usr/local/bin/setup_mysqldbs.sh',
+		source => 'puppet:///modules/erova-hanger/setup_mysqldbs.sh',
+		mode => 0755,
+		owner => root,
+		group => root
+ }
+	exec { "Run database config script":
+		require => File['/usr/local/bin/setup_mysqldbs.sh'],
+		command => '/usr/local/bin/setup_mysqldbs.sh'
+}
 }
