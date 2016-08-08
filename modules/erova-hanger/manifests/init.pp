@@ -72,4 +72,18 @@ class hanger {
 		require => File['/usr/local/bin/setup_mysqldbs.sh'],
 		command => '/usr/local/bin/setup_mysqldbs.sh'
 }
+	file { "Directories needed for REMIT message handling":
+		file => '/data/REMIT/transmit',
+		ensure => directory,
+		owner => erova,
+		group => erova,
+		mode => 0755		
+}
+	file { "Directories needed for REMIT message handling":
+		file => '/data/REMIT/archive',
+		ensure => directory,
+		owner => erova,
+		group => erova,
+		mode => 0755		
+}
 }
