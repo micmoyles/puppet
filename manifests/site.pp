@@ -5,7 +5,6 @@ import 'directories'
 import 'packages'
 import 'erova-boot'
 import 'erova-hanger'
-#test comment
 
 class users_and_groups {
 	group { "svn" : ensure => present }
@@ -22,6 +21,11 @@ node 'raspberrypi.chello.ie' {
 node 'knopfler.chello.ie' {
 	include users_and_groups
 	include workstation_packages 
+	include hanger
+}
+node 'ip-172-31-45-132' {
+	include users_and_groups
+	include server_packages
 	include hanger
 }
 node default {

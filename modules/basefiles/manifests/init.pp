@@ -14,13 +14,3 @@ class basefiles {
 		source => 'puppet:///modules/basefiles/vimrc.local';
 	}
 	}
-
-class basefiles::workstation inherits basefiles {
-		file { '/usr/local/bin/chelsea2.sh':
-		ensure => file,
-		owner => root,
-		group => root,
-		mode  => 0755,
-		source => 'puppet:///modules/basefiles/chelsea.sh';
-	}
-}
