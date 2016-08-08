@@ -40,6 +40,9 @@ class hanger {
 # this module needs work, the symlinks should be created - not added to a bash file
 	package { "mysql-server": ensure => present }
 	package { "python-bs4": ensure => present }
+	package { "python-dev": ensure => present }
+	package { "python2.7-mysqldb": ensure => present }
+	package { "libmysqlclient-dev": ensure => present }
 	package { "postgresql": ensure => present }
 	package { "postgresql-contrib": ensure => present }
 	file { "erova packages directory":
