@@ -20,3 +20,9 @@ class server_packages inherits packages {
 	package { "keepalived": ensure => installed }
 	package { "lldpd": ensure => purged }
 }
+class erova_packages inherits packages {
+	notify  {'Hello from erova packages!': withpath => true, }
+	package { "bsd-mailx": ensure => installed }
+	package { "postfix": ensure => installed }
+	package { "monit": ensure => installed }
+}
