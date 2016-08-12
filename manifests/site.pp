@@ -25,7 +25,7 @@ node 'knopfler.chello.ie' {
 }
 node 'ip-172-31-45-132' {
 	include users_and_groups
-	include server_packages
+	include erova_packages
 	include hanger
 	include boot 
 	include users::erova
