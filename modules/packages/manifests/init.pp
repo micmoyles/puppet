@@ -1,19 +1,24 @@
 class packages {
-	package { "vim": ensure => installed }
+	package { "vim": ensure => latest }
 	package { "subversion": ensure => installed }
 	package { "telnet": ensure => installed }
 	package { "tree": ensure => installed }
 	package { "git": ensure => latest }
 	package { "pylint": ensure => latest }
+	file { '/etc/vim/vimrc':
+		ensure => file,
+		owner => root,
+		group => root,
+		mode  => 0755,
+		source => 'puppet:///modules/packages/vimrc.local';
+	}
 }
 class workstation_packages inherits packages {
-	notify {'Hello from workstation packages!': withpath => true, }
 	package { "htop": ensure => installed }
 	package { "puppet": ensure => latest }
 	package { "python-tk": ensure => latest }
 }
 class server_packages inherits packages {
-	notify  {'Hello from server packages!': withpath => true, }
 	package { "bsd-mailx": ensure => installed }
 	package { "postfix": ensure => installed }
 	package { "cpuset": ensure => installed }
@@ -21,7 +26,6 @@ class server_packages inherits packages {
 	package { "lldpd": ensure => purged }
 }
 class erova_packages inherits packages {
-	notify  {'Hello from erova packages!': withpath => true, }
 	package { "bsd-mailx": ensure => installed }
 	package { "postfix": ensure => installed }
 	package { "monit": ensure => installed }
