@@ -29,5 +29,4 @@ class erova_packages inherits packages {
 	package { "bsd-mailx": ensure => installed }
 	package { "postfix": ensure => installed }
 	package { "monit": ensure => installed }
-	package { "denyhosts": ensure => installed }
 }
