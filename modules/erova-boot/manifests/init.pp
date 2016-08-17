@@ -50,13 +50,6 @@ class boot {
 		mode  => 0755,
 		source => 'puppet:///modules/erova-boot/bashrc-all';
 }
-	file{'/etc/bash.aliases':
-		ensure => file,
-		owner => root,
-		group => root,
-		mode  => 0755,
-		source => 'puppet:///modules/erova-boot/bash-aliases';
-}
 	file{'/etc/profile':
 		ensure => file,
 		owner => root,
@@ -73,7 +66,14 @@ class boot {
 			mode  => 0755,
 			source => 'puppet:///modules/erova-boot/profile-all';
 		}
-		}	
+		file{'/etc/bash.aliases':
+			ensure => file,
+			owner => root,
+			group => root,
+			mode  => 0755,
+			source => 'puppet:///modules/erova-boot/bash-aliases';
+			}	
+		      }
 	puppet: {
 		file{'/etc/iampuppet':
 			ensure => file,
@@ -82,6 +82,23 @@ class boot {
 			mode  => 0755,
 			source => 'puppet:///modules/erova-boot/profile-all';
 		    }	
+		file{'/etc/bash.aliases':
+			ensure => file,
+			owner => root,
+			group => root,
+			mode  => 0755,
+			source => 'puppet:///modules/erova-boot/bash-aliases';
+			}
 		}
-}
-}
+	ip-172-31-45-132: {
+		file{'/etc/profile.d/erova_aliases.sh':
+			ensure => file,
+			owner => root,
+			group => root,
+			mode  => 0755,
+			source => 'puppet:///modules/erova-boot/erova_aliases.sh';
+			}
+
+			  }	
+} # close hostname case
+} # close boot module

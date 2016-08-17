@@ -1,9 +1,10 @@
-
+import 'directories.pp'
 # Note on passwds
 # The must be stored as a hash generated from openssl
 # openssl passwd -1 is the command
 
 class users {
+       include directories::home
 # passwd is wiarreft
         user { 'mmoyles':
         	home => '/home/mmoyles',
@@ -13,13 +14,13 @@ class users {
         	shell => '/bin/bash',
         	groups => ['svn','puppet','sudo','erova']
 	    }
-#	file { '/home/mmoyles/.ssh/amazon_linux.pem':
-#		ensure => file,
-#		owner => mmoyles,
-#		group => mmoyles,
-#		mode  => 0600,
-#		source => 'puppet:///modules/users/amazon_linux.pem';
-#	}
+	file { '/home/mmoyles/.ssh/authorised_keys':
+		ensure => file,
+		owner => mmoyles,
+		group => mmoyles,
+		mode  => 0600,
+		source => 'puppet:///modules/users/mmoyles/id_rsa.pub';
+	}
 
 	}
 

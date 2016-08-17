@@ -1,7 +1,6 @@
 import 'hello.pp'
 import 'users'
 import 'basefiles'
-import 'directories'
 import 'packages'
 import 'erova-boot'
 import 'erova-hanger'
@@ -34,7 +33,6 @@ node default {
 	include users
 	include users_and_groups
 	include packages
-	include directories::home
 	include basefiles
 	include boot
 }

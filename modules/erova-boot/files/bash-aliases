@@ -15,7 +15,6 @@ then
 else 
 	alias gopup='cd /home/mmoyles/repos/puppet'
 	alias gohang='cd /home/mmoyles/repos/hanger'
-	alias getchelsea='chelsea.sh'
 fi
 TMOUT=3000
 readonly TMOUT
