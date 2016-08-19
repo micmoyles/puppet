@@ -6,6 +6,9 @@ mysql -uroot -e 'flush privileges'
 mysql -uroot -e 'create database if not exists REMIT'
 mysql -uroot -e 'create database if not exists config'
 mysql -uroot -e "create user if not exists 'erova'@'localhost' identified by 'er0va123'"
+mysql -uroot -e "create user if not exists 'reader'@'%' identified by '1canR3ad'"
+mysql -uroot -e "grant select on REMIT.* to 'reader'@'%'"
+mysql -uroot -e "grant select on config.* to 'reader'@'%'"
 mysql -uroot -e "grant select,insert,update on REMIT.* to 'erova'@'localhost'"
 mysql -uroot -e "grant select,insert,update on config.* to 'erova'@'localhost'"
 mysql -uroot -e "create table if not exists REMIT.frequency ( timestamp timestamp, freq float(10,5) )"
