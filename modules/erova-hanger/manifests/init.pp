@@ -2,19 +2,9 @@
 #
 #  This will install the database and configure the front end webserver and script used to access it. 
 #
-# === Parameters
-#
-# Document parameters here.
-#
-# [*sample_parameter*]
-#   Explanation of what this parameter affects and what it defaults to.
-#   e.g. "Specify one or more upstream ntp servers as an array."
-#
-# === Variables
-#
-# Here you should define a list of variables that this module would require.
 #
 $remit_directories = ['/data','/data/REMIT','/data/REMIT/archive','/data/REMIT/transmit']
+$hanger_directories = ['/var/www/hanger/']
 # [*sample_variable*]
 #   Explanation of how this variable affects the funtion of this class and if
 #   it has a default. e.g. "The parameter enc_ntp_servers must be set by the
@@ -34,7 +24,7 @@ $remit_directories = ['/data','/data/REMIT','/data/REMIT/archive','/data/REMIT/t
 #
 # === Copyright
 #
-# Copyright 2016 Your name here, unless otherwise noted.
+# Copyright 2016 Michael Moyles
 #
 class hanger {
 # this module needs work, the symlinks should be created - not added to a bash file
@@ -81,5 +71,18 @@ class hanger {
 		owner => erova,
 		group => erova,
 		mode => 0755		
-}
+	}
+	file { $hanger_directories:
+		  ensure => directory,
+		  owner  => root,
+		  group  => root,
+		  mode   => 0777
+	}
+	file { 'apache site configs':
+	 		path => '/etc/apache2/sites-available/001-hanger',
+	 		sourec => 'puppet:///modules/erova-hanger/apache2/001-hanger',
+	 		owner => root,
+	 		group => root,
+	 		mode => 0777
+	 }
 }
