@@ -4,14 +4,15 @@
 	ServerAlias dash.erovaenergy.com 
 
 
-	DocumentRoot /var/www/hanger_exec_test
-	<Directory /var/www/hanger_exec_test>
+	DocumentRoot /var/www/hanger
+	<Directory /var/www/hanger>
 		AuthType Basic
 		AuthName "Erova development server requires authentication"
 		AuthuserFile /etc/apache2/.htpasswd
 		Require valid-user
 		Options +ExecCGI
-		Options Indexes FollowSymLinks MultiViews +ExecCGI
+                DirectoryIndex index.py
+		Options +Indexes +FollowSymLinks +MultiViews +ExecCGI
 		AddHandler cgi-script .py
 		AllowOverride None
 		Order allow,deny

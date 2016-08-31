@@ -4,7 +4,7 @@
 #
 #
 $remit_directories = ['/data','/data/REMIT','/data/REMIT/archive','/data/REMIT/transmit']
-$hanger_directories = ['/var/www/hanger/']
+$hanger_directories = ['/var/www/hanger/','/var/www/hanger/plant_data/']
 # [*sample_variable*]
 #   Explanation of how this variable affects the funtion of this class and if
 #   it has a default. e.g. "The parameter enc_ntp_servers must be set by the
@@ -28,6 +28,7 @@ $hanger_directories = ['/var/www/hanger/']
 #
 class hanger {
 # this module needs work, the symlinks should be created - not added to a bash file
+	service { "apache2": ensure => running }
 	package { "mysql-server": ensure => present }
 	package { "python-bs4": ensure => present }
 	package { "python-dev": ensure => present }
@@ -75,14 +76,22 @@ class hanger {
 	file { $hanger_directories:
 		  ensure => directory,
 		  owner  => root,
-		  group  => root,
-		  mode   => 0777
+		  group  => erova,
+		  mode   => 0775
 	}
 	file { 'apache site configs':
-	 		path => '/etc/apache2/sites-available/001-hanger',
-	 		sourec => 'puppet:///modules/erova-hanger/apache2/001-hanger',
-	 		owner => root,
-	 		group => root,
-	 		mode => 0777
+		notify => service['apache2'],
+	 	path => '/etc/apache2/sites-available/001-hanger.conf',
+	 	source => 'puppet:///modules/erova-hanger/apache2/001-hanger',
+	 	owner => root,
+	 	group => root,
+	 	mode => 0777
+	 }
+	file { 'htpasswd access file':
+	 	path => '/etc/apache2/.htpasswd',
+	 	source => 'puppet:///modules/erova-hanger/apache2/htpasswd',
+	 	owner => root,
+	 	group => root,
+	 	mode => 0777
 	 }
 }
