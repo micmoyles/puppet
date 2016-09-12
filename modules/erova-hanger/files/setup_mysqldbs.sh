@@ -32,7 +32,7 @@ mysql -uroot -e "create table if not exists trades.trades ( Instrument varchar(3
                                                         Counterparty varchar(10),
                                                         TradeDate timestamp,
                                                         TradeID int not null auto_increment,
-                                                        primary key TradeID) "
+                                                        primary key (TradeID) ) "
 mysql -uroot -e "create table if not exists position.irl ( timestamp timestamp, position float(10,5) )"
 mysql -uroot -e "create table if not exists position.uk ( timestamp timestamp, position float(10,5) )"
 mysql -uroot -e "create table if not exists position.nl ( timestamp timestamp, position float(10,5) )"
