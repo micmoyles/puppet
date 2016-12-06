@@ -3,7 +3,7 @@
 #  This will install the database and configure the front end webserver and script used to access it. 
 #
 #
-$remit_directories = ['/data','/data/REMIT','/data/REMIT/archive','/data/REMIT/transmit']
+$remit_directories = ['/data','/data/REMIT','/data/REMIT/archive','/data/REMIT/transmit','/data/REMIT/plant_data']
 $hanger_directories = ['/var/www/hanger/','/var/www/hanger/plant_data/']
 # [*sample_variable*]
 #   Explanation of how this variable affects the funtion of this class and if
