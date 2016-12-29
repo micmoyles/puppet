@@ -4,6 +4,7 @@
 #
 #
 $remit_directories = ['/data','/data/REMIT','/data/REMIT/archive','/data/REMIT/transmit','/data/REMIT/plant_data']
+$app_directories = ['/data','/data/apps','/data/monit'],
 $hanger_directories = ['/var/www/hanger/','/var/www/hanger/plant_data/']
 # [*sample_variable*]
 #   Explanation of how this variable affects the funtion of this class and if
@@ -71,7 +72,13 @@ class hanger {
 		ensure => directory,
 		owner => erova,
 		group => erova,
-		mode => 0755		
+		mode => 0775		
+	}
+	file { $app_directories:
+		ensure => directory,
+		owner => erova,
+		group => erova,
+		mode => 0775		
 	}
 	file { $hanger_directories:
 		  ensure => directory,
