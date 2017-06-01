@@ -27,12 +27,14 @@ node 'ip-172-31-45-132' {
 	include erova_packages
 	include hanger
 	include boot 
-	include users::erova
 }
 node default {
 	include users
+	include users::erova
 	include users_and_groups
+	include erova_packages
 	include packages
+	include hanger 
 	include basefiles
 	include boot
 }
