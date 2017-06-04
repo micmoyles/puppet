@@ -64,5 +64,13 @@ class users::erova inherits users {
         	shell => '/bin/bash',
         	groups => ['svn','erova','sudo']
    	 }
+        user { 'pnash':
+   		home => '/home/pnash',
+        	ensure => present,
+		password => '$1$4jKR4fll$eNO4Bo1PPNaCrS7/i8Bdj/',#nasp
+        	comment => 'Peter Nash',
+        	shell => '/bin/bash',
+        	groups => ['svn','erova','sudo']
+   	 }
 }
 
