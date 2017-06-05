@@ -2,6 +2,7 @@ import 'hello.pp'
 import 'users'
 import 'basefiles'
 import 'packages'
+import 'mongo'
 import 'erova-boot'
 import 'erova-hanger'
 
@@ -37,4 +38,5 @@ node default {
 	include hanger 
 	include basefiles
 	include boot
+	include mongo
 }
