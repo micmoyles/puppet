@@ -87,8 +87,15 @@ class hanger {
 		  mode   => 0775
 	}
 	file { 'apache site configs':
-		notify => service['apache2'],
 	 	path => '/etc/apache2/sites-available/001-hanger.conf',
+	 	source => 'puppet:///modules/erova-hanger/apache2/001-hanger',
+	 	owner => root,
+	 	group => root,
+	 	mode => 0777
+	 }
+	file { 'Enable 001-hanger':
+		notify => service['apache2'],
+	 	path => '/etc/apache2/sites-enabled/001-hanger.conf',
 	 	source => 'puppet:///modules/erova-hanger/apache2/001-hanger',
 	 	owner => root,
 	 	group => root,
