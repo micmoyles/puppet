@@ -19,6 +19,10 @@ class directories::home {
 		owner => mgolden, group => mgolden, mode => 0755,
 		ensure => "directory",
 	}
+	file { '/home/pnash':
+		owner => pnash, group => pnash, mode => 0755,
+		ensure => "directory",
+	}
 }
 class directories::home::pi inherits directories::home {
 	file { '/home/michael':
