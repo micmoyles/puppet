@@ -4,8 +4,8 @@
 	ServerAlias dash.erovaenergy.com 
 
 
-	DocumentRoot /var/www/hanger
-	<Directory /var/www/hanger>
+	DocumentRoot /var/www/hanger/hanger
+	<Directory /var/www/hanger/hanger>
 		AuthType Basic
 		AuthName "Erova development server requires authentication"
 		AuthuserFile /etc/apache2/.htpasswd
