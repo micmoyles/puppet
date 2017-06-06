@@ -1,6 +1,7 @@
 -------------------------------------------------
 |                                               |
-| Welcome to the Erova development server       | 
-| All changes will be overwritten by puppet     |
+| This server is maintained by puppet           | 
 |                                               |
+| To prevent changes being overwritten          |
+| make sure they are contained in a module      |
 -------------------------------------------------
