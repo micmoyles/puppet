@@ -18,11 +18,6 @@ node 'raspberrypi.chello.ie' {
 	include directories::home::pi
 	include boot
 }
-node 'knopfler.chello.ie' {
-	include users_and_groups
-	include workstation_packages 
-	include hanger
-}
 node 'ip-172-31-45-132' {
 	include users_and_groups
 	include erova_packages
@@ -38,5 +33,4 @@ node default {
 	include hanger 
 	include basefiles
 	include boot
-	include mongo
 }
