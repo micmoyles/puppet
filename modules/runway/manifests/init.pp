@@ -36,6 +36,7 @@ class runway {
 	package { "mysql-server": ensure => present }
 	package { "python-bs4": ensure => present }
 	package { "python-dev": ensure => present }
+	package { "python-yaml": ensure => present }
 	package { "python2.7-mysqldb": ensure => present }
 	package { "libmysqlclient-dev": ensure => present }
 	package { "postgresql": ensure => present }
