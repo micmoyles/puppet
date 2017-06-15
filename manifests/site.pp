@@ -4,7 +4,7 @@ import 'basefiles'
 import 'packages'
 import 'mongo'
 import 'erova-boot'
-import 'erova-hanger'
+import 'runway'
 
 class users_and_groups {
 	group { "svn" : ensure => present }
@@ -18,19 +18,15 @@ node 'raspberrypi.chello.ie' {
 	include directories::home::pi
 	include boot
 }
-node 'ip-172-31-45-132' {
-	include users_and_groups
+node 'puppet' {
 	include erova_packages
-	include hanger
-	include boot 
+	include packages
+	include runway 
+	include users::erova
 }
 node default {
 	include users
-	include users::erova
 	include users_and_groups
-	include erova_packages
-	include packages
-	include hanger 
 	include basefiles
 	include boot
 }
