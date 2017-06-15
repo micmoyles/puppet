@@ -4,7 +4,9 @@ class packages {
 	package { "telnet": ensure => installed }
 	package { "tree": ensure => installed }
 	package { "git": ensure => latest }
-	package { "pylint": ensure => latest }
+	package { "pylint": ensure => purged }
+	package { "apt-transport-https": ensure => latest }
+	package { "ca-certificates": ensure => latest }
 	file { '/etc/vim/vimrc':
 		ensure => file,
 		owner => root,
