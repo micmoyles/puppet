@@ -8,7 +8,7 @@
 /usr/bin/mysql -uroot -e 'create database if not exists trades'
 /usr/bin/mysql -uroot -e 'create database if not exists position'
 /usr/bin/mysql -uroot -e "create user if not exists 'erova'@'localhost' identified by 'er0va123'"
-/usr/bin/mysql -uroot -e "create user if not exists 'reader'@'%' identified by '1canR3ad'"
+/usr/bin/mysql -uroot -e "create user if not exists 'reader'@'localhost' identified by '1canR3ad'"
 /usr/bin/mysql -uroot -e "grant select on REMIT.* to 'reader'@'%'"
 /usr/bin/mysql -uroot -e "grant select on config.* to 'reader'@'%'"
 /usr/bin/mysql -uroot -e "grant select on trades.* to 'reader'@'%'"
