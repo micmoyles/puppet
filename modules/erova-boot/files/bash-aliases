@@ -5,6 +5,8 @@ alias cgid='cd /usr/lib/cgi-bin/'
 alias ll='ls -ltr --color'
 alias gopup='cd /etc/puppet'
 alias puprun='sudo puppet agent -t'
+alias puptest='sudo puppet agent -t --noop'
+alias gerp='grep'
 if [ `whoami` == 'mmoyles' ]
 then 
 	alias goev='ssh -i /home/mmoyles/.ssh/amazon_linux.pem ubuntu@52.30.209.32'
