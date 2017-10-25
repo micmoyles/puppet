@@ -21,7 +21,7 @@ $hanger_directories = ['/var/www/hanger/','/var/www/hanger/plant_data/']
 #
 # === Authors
 #
-# Author Name <mike@erova-it.ie>
+# Author Name <micmoyles@gmail.com>
 #
 # === Copyright
 #
