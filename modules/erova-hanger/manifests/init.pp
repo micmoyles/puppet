@@ -64,9 +64,28 @@ class hanger {
 		owner => root,
 		group => root
  }
+        file { "database configuration script 2 - temporary lets remember to tidy this all up":
+		path => '/usr/local/bin/setup_mysqldbs2.sh',
+		source => 'puppet:///modules/erova-hanger/setup_mysqldbs2.sh',
+		mode => 0755,
+		owner => root,
+		group => root
+ }
+        file { "database configuration commands - temporary lets remember to tidy this all up":
+		path => '/tmp/commands.sql',
+		source => 'puppet:///modules/erova-hanger/commands.sql',
+		mode => 0755,
+		owner => root,
+		group => root
+ }
 	exec { "Run database config script":
 		require => File['/usr/local/bin/setup_mysqldbs.sh'],
 		command => '/usr/local/bin/setup_mysqldbs.sh'
+}
+	exec { "Run second database config script":
+		require => File['/usr/local/bin/setup_mysqldbs2.sh'],
+		require => File['/tmp/commands.sql'],
+		command => '/usr/local/bin/setup_mysqldbs2.sh'
 }
 	file { $remit_directories:
 		ensure => directory,
