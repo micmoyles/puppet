@@ -24,6 +24,9 @@ node 'puppet' {
 	include runway 
 	include users::erova
 }
+node 'michael-S500CA'{
+	include workstation_packages
+}
 node default {
 	include users
 	include users_and_groups
