@@ -7,6 +7,7 @@ class packages {
 	package { "pylint": ensure => purged }
 	package { "apt-transport-https": ensure => latest }
 	package { "ca-certificates": ensure => latest }
+
 	file { '/etc/vim/vimrc':
 		ensure => file,
 		owner => root,
