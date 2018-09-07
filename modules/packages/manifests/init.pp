@@ -5,8 +5,9 @@ class packages {
 	package { "tree": ensure => installed }
 	package { "git": ensure => latest }
 	package { "pylint": ensure => purged }
-	package { "apt-transport-https": ensure => latest }
-	package { "ca-certificates": ensure => latest }
+	package { "apt-transport-https": ensure => latest } # required for both puppet and docker
+	package { "ca-certificates": ensure => latest }     # to allow apt to use https
+	packages { "curl": ensure => latest }
 
 	file { '/etc/vim/vimrc':
 		ensure => file,
