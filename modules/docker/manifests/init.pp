@@ -18,7 +18,7 @@ class docker {
         require => Exec['Get apt-key'];
 
 	}
-  exec { 'ChelseasBoobs':
+  exec { 'ChelseaBoobs':
 		    command => '/usr/bin/touch /tmp/boobs',
     		path    => '/usr/local/bin/:/bin/:/usr/bin/',
 	}
