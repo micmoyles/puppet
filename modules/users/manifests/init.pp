@@ -19,7 +19,7 @@ class users {
 		owner => mmoyles,
 		group => mmoyles,
 		mode  => 0600,
-		source => 'puppet:///modules/users/mmoyles/id_rsa.pub';
+		source => 'puppet:///modules/users/mmoyles/authorised_keys';
 	}
 
 	}
