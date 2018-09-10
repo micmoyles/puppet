@@ -23,8 +23,6 @@ class workstation_packages inherits packages {
 	package { "python-tk": ensure => latest }
 }
 class server_packages inherits packages {
-	package { "bsd-mailx": ensure => installed }
-	package { "postfix": ensure => installed }
 	package { "cpuset": ensure => installed }
 	package { "keepalived": ensure => installed }
 	package { "lldpd": ensure => purged }
