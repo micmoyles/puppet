@@ -5,6 +5,7 @@ import 'packages'
 import 'mongo'
 import 'erova-boot'
 import 'runway'
+import 'docker'
 
 class users_and_groups {
 	group { "svn" : ensure => present }
@@ -25,6 +26,7 @@ node 'puppet' {
 	include users::puppet
 	include boot
   include basefiles
+  include docker
 }
 node 'michael-S500CA'{
 	include workstation_packages
