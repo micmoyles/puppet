@@ -7,10 +7,12 @@ class docker {
 	exec { 'Apt-get Update':
 		    command => '/usr/bin/apt-get update',
     		path    => '/usr/local/bin/:/bin/:/usr/bin/',
+        before  => package['docker-ce'];
 	}
 	exec {  'Get apt-key':
 		    command => 'curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /tmp/docker.gpg',
     		path    => '/usr/local/bin/:/bin/:/usr/bin/',
+        before  => Exec['Add apt-key'];
 	}
   exec {  'Add apt-key':
 		    command => 'apt-key add /tmp/docker.gpg',
@@ -22,12 +24,10 @@ class docker {
 		owner => root,
 		group => root,
 		mode  => 0755,
-		source => 'puppet:///modules/docker/docker.list';
+		source => 'puppet:///modules/docker/docker.list',
+    before => Exec['Apt-get Update'];
 	}
-  exec { 'Apt-get Update Again':
-		    command => '/usr/bin/apt-get update',
-    		path    => '/usr/local/bin/:/bin/:/usr/bin/',
-	}
-	package { "docker-ce": ensure => latest,
+
+	package { "docker-ce": ensure => present,
           }
 }
