@@ -22,6 +22,7 @@ node 'puppet' {
 	include erova_packages
 	include packages
 	include runway 
+	include users::puppet 
 }
 node 'michael-S500CA'{
 	include workstation_packages

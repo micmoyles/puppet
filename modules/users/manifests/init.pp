@@ -32,11 +32,14 @@ class users::pi inherits users {
         home => '/home/michael',
         ensure => present,
         managehome => true,
-				password => '$1$UfXQTHh1$I070bUWksoJrrHRrB08vn1',
+	password => '$1$UfXQTHh1$I070bUWksoJrrHRrB08vn1',
         comment => 'user michael',
         shell => '/bin/bash',
         groups => ['svn','puppet','sudo','erova']
     }
+}
+class users::puppet inherits users {
+
 }
 class users::erova inherits users {
 
