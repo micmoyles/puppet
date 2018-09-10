@@ -14,9 +14,7 @@ class docker {
 	}
   exec {  'Add apt-key':
 		    command => 'apt-key add /tmp/docker.gpg',
-    		path    => '/usr/local/bin/:/bin/:/usr/bin/',
-        require => Exec['Get apt-key'];
-
+    		path    => '/usr/local/bin/:/bin/:/usr/bin/';
 	}
 
 	file { '/etc/apt/sources.list.d/docker.list':
