@@ -24,10 +24,12 @@ class docker {
 		owner => root,
 		group => root,
 		mode  => 0755,
-		source => 'puppet:///modules/docker/docker.list',
-		require => Exec['Apt-get Update','Add apt-key'];
+		source => 'puppet:///modules/docker/docker.list';
+	}
+  exec { 'Apt-get Update':
+		    command => '/usr/bin/apt-get update',
+    		path    => '/usr/local/bin/:/bin/:/usr/bin/',
 	}
 	package { "docker-ce": ensure => latest,
-            require => Exec['Apt-get Update'];
           }
 }
