@@ -18,10 +18,7 @@ class docker {
         require => Exec['Get apt-key'];
 
 	}
-  exec { 'ChelseaBoobs':
-		    command => '/usr/bin/touch /tmp/boobs',
-    		path    => '/usr/local/bin/:/bin/:/usr/bin/',
-	}
+
 	file { '/etc/apt/sources.list.d/docker.list':
 		ensure => file,
 		owner => root,
@@ -31,6 +28,6 @@ class docker {
 		require => Exec['Apt-get Update','Add apt-key'];
 	}
 	package { "docker-ce": ensure => latest,
-            require => Exec['ChelseaBoobs'];
+            require => Exec['Apt-get Update'];
           }
 }
