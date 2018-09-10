@@ -1,12 +1,15 @@
 class directories::home {
 	file { '/home/mmoyles':
-		owner => mmoyles, group => mmoyles, mode => 0755,
+		owner  => mmoyles, group => mmoyles, mode => 0755,
 		ensure => "directory",
 	}
 	file { '/home/mmoyles/.ssh':
-		owner => mmoyles, group => mmoyles, mode => 0755,
+		owner  => mmoyles, group => mmoyles, mode => 0755,
 		ensure => "directory",
 	}
+}
+
+class directories::home::erova inherits directories::home {
 	file { '/home/erova':
 		owner => erova, group => erova, mode => 0755,
 		ensure => "directory",

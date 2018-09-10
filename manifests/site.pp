@@ -21,8 +21,10 @@ node 'raspberrypi.chello.ie' {
 node 'puppet' {
 	include erova_packages
 	include packages
-	include runway 
-	include users::puppet 
+	include runway
+	include users::puppet
+	include boot
+  include basefiles
 }
 node 'michael-S500CA'{
 	include workstation_packages
