@@ -12,11 +12,15 @@ class docker {
 		    command => 'curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /tmp/docker.gpg',
     		path    => '/usr/local/bin/:/bin/:/usr/bin/',
 	}
-  	exec {  'Add apt-key':
+  exec {  'Add apt-key':
 		    command => 'apt-key add /tmp/docker.gpg',
     		path    => '/usr/local/bin/:/bin/:/usr/bin/',
         require => Exec['Get apt-key'];
 
+	}
+  exec { 'ChelseasBoobs':
+		    command => '/usr/bin/touch /tmp/boobs',
+    		path    => '/usr/local/bin/:/bin/:/usr/bin/',
 	}
 	file { '/etc/apt/sources.list.d/docker.list':
 		ensure => file,
@@ -26,5 +30,7 @@ class docker {
 		source => 'puppet:///modules/docker/docker.list',
 		require => Exec['Apt-get Update','Add apt-key'];
 	}
-	package { "docker-ce": ensure => latest }
+	package { "docker-ce": ensure => latest,
+            require => Exec['ChelseaBoobs'];
+          }
 }
