@@ -26,7 +26,7 @@ class docker {
 		mode  => 0755,
 		source => 'puppet:///modules/docker/docker.list';
 	}
-  exec { 'Apt-get Update':
+  exec { 'Apt-get Update Again':
 		    command => '/usr/bin/apt-get update',
     		path    => '/usr/local/bin/:/bin/:/usr/bin/',
 	}
