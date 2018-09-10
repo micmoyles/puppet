@@ -16,7 +16,8 @@ class docker {
 	}
   exec {  'Add apt-key':
 		    command => 'apt-key add /tmp/docker.gpg',
-    		path    => '/usr/local/bin/:/bin/:/usr/bin/';
+    		path    => '/usr/local/bin/:/bin/:/usr/bin/',
+        before  => File['/etc/apt/sources.list.d/docker.list'];
 	}
 
 	file { '/etc/apt/sources.list.d/docker.list':
@@ -25,7 +26,7 @@ class docker {
 		group => root,
 		mode  => 0755,
 		source => 'puppet:///modules/docker/docker.list',
-    before => Exec['Apt-get Update'];
+    before => Exec['Get apt-key'];
 	}
 
 	package { "docker-ce": ensure => present,
