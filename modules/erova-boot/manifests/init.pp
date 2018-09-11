@@ -98,7 +98,5 @@ class boot {
 			}
 		}
 
-
-			  }	
 } # close hostname case
 } # close boot module
