@@ -56,7 +56,14 @@ class boot {
 		group => root,
 		mode  => 0755,
 		source => 'puppet:///modules/erova-boot/profile-all';
-}	
+}
+			file { '/etc/vim/vimrc.local':
+		ensure => file,
+		owner => root,
+		group => root,
+		mode  => 0755,
+		source => 'puppet:///modules/erova-boot/vimrc.local';
+	}
 	case $hostname{
 	raspberrypi: {
 		file{'/etc/iampi':
