@@ -21,7 +21,7 @@ class workstation_packages inherits packages {
 	package { "htop": ensure => installed }
 	package { "puppet": ensure => installed }
 	package { "python-tk": ensure => installed }
-  package { "texlive-latex-base": ensure => installed }
+  package { "texlive-latex-base": ensure => installed } # for pdflatex
 }
 class server_packages inherits packages {
 	package { "cpuset": ensure => installed }
