@@ -90,14 +90,7 @@ class boot {
 			source => 'puppet:///modules/erova-boot/bash-aliases';
 			}
 		}
-	ip-172-31-45-132: {
-		file{'/etc/profile.d/erova_aliases.sh':
-			ensure => file,
-			owner => root,
-			group => root,
-			mode  => 0755,
-			source => 'puppet:///modules/erova-boot/erova_aliases.sh';
-			}
+
 
 			  }	
 } # close hostname case
