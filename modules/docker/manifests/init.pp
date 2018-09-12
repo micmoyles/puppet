@@ -10,7 +10,8 @@ class docker {
         before  => package['docker-ce'];
 	}
 	exec {  'Get apt-key':
-		    command => 'curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /tmp/docker.gpg',
+		    #command => 'curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /tmp/docker.gpg',
+        command => 'curl -fsSL https://download.docker.com/linux/raspbian/gpg -o /tmp/docker.gpg',
     		path    => '/usr/local/bin/:/bin/:/usr/bin/',
         before  => Exec['Add apt-key'];
 	}
