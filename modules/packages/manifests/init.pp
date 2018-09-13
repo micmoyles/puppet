@@ -8,6 +8,7 @@ class packages {
 	package { "apt-transport-https": ensure => latest } # required for both puppet and docker
 	package { "ca-certificates": ensure => latest }     # to allow apt to use https
 	package { "curl": ensure => latest }
+	package { "lsof": ensure => installed }
 
 	file { '/etc/vim/vimrc':
 		ensure => file,
