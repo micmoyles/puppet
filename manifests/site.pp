@@ -6,7 +6,7 @@ import 'mongo'
 import 'erova-boot'
 import 'runway'
 import 'docker'
-import 'nodes/*pp'
+import 'nodes/*.pp'
 
 class users_and_groups {
 	group { "svn" : ensure => present }
