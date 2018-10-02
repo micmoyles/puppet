@@ -28,6 +28,7 @@ node 'puppet' {
 	include boot
   include basefiles
   include docker
+  include network
 }
 node 'michael-S500CA'{
 	include workstation_packages
