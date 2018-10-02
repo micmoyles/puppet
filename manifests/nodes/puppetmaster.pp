@@ -1,5 +1,5 @@
 case $hostname {
   'puppet': {
-    $site_id             = '135'
+    $node_id             = '101'
   }
 }
