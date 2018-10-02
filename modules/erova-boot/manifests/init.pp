@@ -103,7 +103,7 @@ class boot {
     owner   => root,
     group   => root,
     mode    => 0755,
-    content => template('header.erb',"erova-boot/saysomething.erb")
+    content => template("erova-boot/saysomething.erb")
   }
 
 } # close boot module
