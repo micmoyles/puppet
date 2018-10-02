@@ -12,9 +12,7 @@ class packages {
 	package { "python-numpy": ensure => installed }
 	package { "python-scipy": ensure => installed }
  	package { "python-matplotlib": ensure => installed }
-
-
-
+  package { "htop": ensure => installed }
 
 	file { '/etc/vim/vimrc':
 		ensure => file,
@@ -24,8 +22,8 @@ class packages {
 		source => 'puppet:///modules/packages/vimrc.local';
 	}
 }
+
 class workstation_packages inherits packages {
-	package { "htop": ensure => installed }
 	package { "puppet": ensure => installed }
 	package { "python-tk": ensure => installed }
   package { "texlive-latex-base": ensure => installed } # for pdflatex
