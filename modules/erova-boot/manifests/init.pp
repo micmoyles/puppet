@@ -97,6 +97,13 @@ class boot {
 			source => 'puppet:///modules/erova-boot/bash-aliases';
 			}
 		}
+  } # close hostname case
 
-} # close hostname case
+  file { '/etc/saysomething':
+    owner   => root,
+    group   => root,
+    mode    => 0755,
+    content => template('header.erb',"erova-boot/saysomething.erb")
+  }
+
 } # close boot module
