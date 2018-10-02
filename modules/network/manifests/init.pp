@@ -2,7 +2,7 @@ class network::base {
 
 	}
 
-class network::interfaces inherits network {
+class network::interfaces inherits network::base {
 	file {'/etc/network/interfaces.d/runway':
 		ensure => file,
 		owner  => root,
