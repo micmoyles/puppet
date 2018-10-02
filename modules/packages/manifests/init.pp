@@ -9,6 +9,12 @@ class packages {
 	package { "ca-certificates": ensure => latest }     # to allow apt to use https
 	package { "curl": ensure => latest }
 	package { "lsof": ensure => installed }
+	package { "python-numpy": ensure => installed }
+	package { "python-scipy": ensure => installed }
+ 	package { "python-matplotlib": ensure => installed }
+
+
+
 
 	file { '/etc/vim/vimrc':
 		ensure => file,
