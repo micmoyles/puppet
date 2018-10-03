@@ -99,7 +99,7 @@ class boot {
 		}
   } # close hostname case
 
-  file { '/etc/saysomething':
+  file { '/etc/node_puppet_conf':
     owner   => root,
     group   => root,
     mode    => 0755,
