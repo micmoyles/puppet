@@ -33,7 +33,6 @@ node 'puppet' {
 node 'michael-S500CA'{
 	include workstation_packages
 	include boot
-  include network::interfaces
 }
 node default {
 	include users
