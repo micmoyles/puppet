@@ -41,28 +41,28 @@ class boot {
 		owner => root,
 		group => root,
 		mode  => 0755,
-		source => 'puppet:///modules/erova-boot/motd';
+		source => 'puppet:///modules/bootstrapping/motd';
 }
 	file{'/etc/bash.bashrc':
 		ensure => file,
 		owner => root,
 		group => root,
 		mode  => 0755,
-		source => 'puppet:///modules/erova-boot/bashrc-all';
+		source => 'puppet:///modules/bootstrapping/bashrc-all';
 }
 	file{'/etc/profile':
 		ensure => file,
 		owner => root,
 		group => root,
 		mode  => 0755,
-		source => 'puppet:///modules/erova-boot/profile-all';
+		source => 'puppet:///modules/bootstrapping/profile-all';
 }
 			file { '/etc/vim/vimrc.local':
 		ensure => file,
 		owner => root,
 		group => root,
 		mode  => 0755,
-		source => 'puppet:///modules/erova-boot/vimrc.local';
+		source => 'puppet:///modules/bootstrapping/vimrc.local';
 	}
 	case $hostname{
 	raspberrypi: {
@@ -71,14 +71,14 @@ class boot {
 			owner => root,
 			group => root,
 			mode  => 0755,
-			source => 'puppet:///modules/erova-boot/profile-all';
+			source => 'puppet:///modules/bootstrapping/profile-all';
 		}
 		file{'/etc/bash.aliases':
 			ensure => file,
 			owner => root,
 			group => root,
 			mode  => 0755,
-			source => 'puppet:///modules/erova-boot/bash-aliases';
+			source => 'puppet:///modules/bootstrapping/bash-aliases';
 			}	
 		      }
 	puppet: {
@@ -87,14 +87,14 @@ class boot {
 			owner => root,
 			group => root,
 			mode  => 0755,
-			source => 'puppet:///modules/erova-boot/profile-all';
+			source => 'puppet:///modules/bootstrapping/profile-all';
 		    }	
 		file{'/etc/bash.aliases':
 			ensure => file,
 			owner => root,
 			group => root,
 			mode  => 0755,
-			source => 'puppet:///modules/erova-boot/bash-aliases';
+			source => 'puppet:///modules/bootstrapping/bash-aliases';
 			}
 		}
   } # close hostname case
@@ -103,7 +103,7 @@ class boot {
     owner   => root,
     group   => root,
     mode    => 0755,
-    content => template("erova-boot/saysomething.erb")
+    content => template("bootstrapping/saysomething.erb")
   }
 
 } # close boot module
