@@ -21,7 +21,6 @@ node 'raspberrypi.chello.ie' {
 	include boot
 }
 node 'puppet' {
-	include packages::erova
   include packages::server
 	include runway
 	include users::puppet

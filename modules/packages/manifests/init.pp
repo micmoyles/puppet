@@ -34,9 +34,6 @@ class packages::server inherits packages::base {
 	package { "cpuset": ensure => installed }
 	package { "keepalived": ensure => installed }
 	package { "lldpd": ensure => purged }
-}
-class packages::erova inherits server_packages::base {
-	package { "bsd-mailx": ensure => installed }
-	package { "postfix": ensure => installed }
-	package { "monit": ensure => installed }
+ 	package { "monit": ensure => installed }
+  package { "postfix": ensure => installed }
 }

@@ -5,7 +5,6 @@ import 'directories.pp'
 
 class users {
        include directories::home
-				# passwd is wiarreft
         user { 'mmoyles':
         	home => '/home/mmoyles',
         	ensure => present,
