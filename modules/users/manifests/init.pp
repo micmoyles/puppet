@@ -8,7 +8,7 @@ class users {
         user { 'mmoyles':
         	home => '/home/mmoyles',
         	ensure => present,
-		password => '$1$rLrcsrrZ$/VnY4X1rlaIJ31FMBiEld0',
+		      password => '$1$rLrcsrrZ$/VnY4X1rlaIJ31FMBiEld0',
         	comment => 'Michael Moyles',
         	shell => '/bin/bash',
         	groups => ['svn','puppet','sudo','erova']
@@ -26,12 +26,11 @@ class users {
 # best to try using managehome => true but this actually doesn't seem to work
 class users::pi inherits users {
 
-				# passwd is wiarreft
-        user { 'michael':
+    user { 'michael':
         home => '/home/michael',
         ensure => present,
         managehome => true,
-	password => '$1$UfXQTHh1$I070bUWksoJrrHRrB08vn1',
+	      password => '$1$UfXQTHh1$I070bUWksoJrrHRrB08vn1',
         comment => 'user michael',
         shell => '/bin/bash',
         groups => ['svn','puppet','sudo','erova']
@@ -45,19 +44,12 @@ class users::erova inherits users {
         user { 'erova':
 					home => '/home/erova',
         	ensure => present,
-					password => '$1$JaQmbDDv$4XzeggNopjsO4507Vq0uT/', #erova123
+					password => '$1$JaQmbDDv$4XzeggNopjsO4507Vq0uT/',
         	comment => 'Erova, shared user',
         	shell => '/bin/bash',
         	groups => ['svn','erova','sudo']
    	 }
-        user { 'mgolden':
-   				home => '/home/mgolden',
-        	ensure => present,
-					password => '$1$IggdB0.D$f8PMmLrohZwsVBCKSqx9V1', #gmatt1
-        	comment => 'Matt Golden',
-        	shell => '/bin/bash',
-        	groups => ['svn','erova','sudo']
-   	 }
+
         user { 'mbrennan':
    				home => '/home/mbrennan',
 					ensure => present,
