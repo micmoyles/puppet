@@ -15,14 +15,14 @@ class users_and_groups {
 
 node 'raspberrypi.chello.ie' {
 	include users::pi 
-	include server_packages
+	include packages::server
 	include users_and_groups
 	include directories::home::pi
 	include boot
 }
 node 'puppet' {
-	include erova_packages
-	include packages
+	include packages::erova
+  include packages::server
 	include runway
 	include users::puppet
 	include boot
@@ -31,7 +31,7 @@ node 'puppet' {
   include network::interfaces
 }
 node 'michael-S500CA'{
-	include workstation_packages
+	include packages::workstation
 	include boot
 }
 node default {

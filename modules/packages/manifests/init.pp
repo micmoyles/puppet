@@ -1,4 +1,4 @@
-class packages {
+class packages::base {
 	package { "vim": ensure => latest }
 	package { "subversion": ensure => installed }
 	package { "telnet": ensure => installed }
@@ -25,17 +25,17 @@ class packages {
 	}
 }
 
-class workstation_packages inherits packages {
+class packages::workstation inherits packages::base {
 	package { "puppet": ensure => installed }
 	package { "python-tk": ensure => installed }
   package { "texlive-latex-base": ensure => installed } # for pdflatex
 }
-class server_packages inherits packages {
+class packages::server inherits packages::base {
 	package { "cpuset": ensure => installed }
 	package { "keepalived": ensure => installed }
 	package { "lldpd": ensure => purged }
 }
-class erova_packages inherits server_packages {
+class packages::erova inherits server_packages::base {
 	package { "bsd-mailx": ensure => installed }
 	package { "postfix": ensure => installed }
 	package { "monit": ensure => installed }
