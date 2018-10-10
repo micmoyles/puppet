@@ -14,6 +14,7 @@ class packages::base {
  	package { "python-matplotlib": ensure => installed }
   package { "htop": ensure => installed }
   package { "traceroute": ensure => installed }
+	package { "ngrep" : ensure => installed }
 
 
 	file { '/etc/vim/vimrc':
