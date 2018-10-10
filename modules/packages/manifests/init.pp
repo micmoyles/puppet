@@ -13,6 +13,8 @@ class packages {
 	package { "python-scipy": ensure => installed }
  	package { "python-matplotlib": ensure => installed }
   package { "htop": ensure => installed }
+  package { "traceroute": ensure => installed }
+
 
 	file { '/etc/vim/vimrc':
 		ensure => file,
