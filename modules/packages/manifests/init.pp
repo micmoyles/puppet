@@ -12,6 +12,7 @@ class packages::base {
 	package { "python-scipy": ensure => installed }
  	package { "python-matplotlib": ensure => installed }
  	package { "python-pip": ensure => installed }
+	package { "python3-pip": ensure => installed }
   package { "htop": ensure => installed }
   package { "traceroute": ensure => installed }
 	package { "ngrep" : ensure => installed }
