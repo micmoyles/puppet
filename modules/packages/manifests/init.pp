@@ -1,13 +1,12 @@
 class packages::base {
-	package { "vim": ensure => latest }
+	package { "vim": ensure => installed }
 	package { "subversion": ensure => installed }
 	package { "telnet": ensure => installed }
 	package { "tree": ensure => installed }
-	package { "git": ensure => latest }
-	package { "pylint": ensure => purged }
-	package { "apt-transport-https": ensure => latest } # required for both puppet and docker
-	package { "ca-certificates": ensure => latest }     # to allow apt to use https
-	package { "curl": ensure => latest }
+	package { "git": ensure => installed }
+	package { "apt-transport-https": ensure => installed } # required for both puppet and docker
+	package { "ca-certificates": ensure => installed }     # to allow apt to use https
+	package { "curl": ensure => installed }
 	package { "lsof": ensure => installed }
 	package { "python-numpy": ensure => installed }
 	package { "python-scipy": ensure => installed }
@@ -15,6 +14,8 @@ class packages::base {
   package { "htop": ensure => installed }
   package { "traceroute": ensure => installed }
 	package { "ngrep" : ensure => installed }
+  package { "at" : ensure => installed }
+
 
 
 	file { '/etc/vim/vimrc':
