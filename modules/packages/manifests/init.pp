@@ -1,3 +1,6 @@
+# ideal design here is to create a module for each package that requires a custom installation
+# for now seeing as this is all running within 3 home servers we can list all the desired packages
+# in a single file for simplicity
 class packages::base {
 	package { "vim": ensure => installed }
 	package { "subversion": ensure => installed }
