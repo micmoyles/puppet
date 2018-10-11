@@ -35,7 +35,6 @@ class packages::workstation inherits packages::base {
 class packages::server inherits packages::base {
 	package { "cpuset": ensure => installed }
 	package { "keepalived": ensure => installed }
-	package { "lldpd": ensure => purged }
  	package { "monit": ensure => installed }
   package { "postfix": ensure => installed }
 }
