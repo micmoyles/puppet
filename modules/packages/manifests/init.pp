@@ -11,6 +11,7 @@ class packages::base {
 	package { "python-numpy": ensure => installed }
 	package { "python-scipy": ensure => installed }
  	package { "python-matplotlib": ensure => installed }
+ 	package { "python-pip": ensure => installed }
   package { "htop": ensure => installed }
   package { "traceroute": ensure => installed }
 	package { "ngrep" : ensure => installed }
