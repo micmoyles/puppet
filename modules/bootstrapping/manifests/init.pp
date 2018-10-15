@@ -35,7 +35,16 @@
 #
 # Copyright 2016 Michael Moyles, unless otherwise noted.
 #
-class boot {
+
+class boot::identify {
+	file { '/etc/node_puppet_conf':
+    owner   => root,
+    group   => root,
+    mode    => 0755,
+    content => template("bootstrapping/saysomething.erb")
+  }
+}
+class boot::base inherits boot::identify {
 	file{'/etc/motd':
 		ensure => file,
 		owner => root,
@@ -98,12 +107,4 @@ class boot {
 			}
 		}
   } # close hostname case
-
-  file { '/etc/node_puppet_conf':
-    owner   => root,
-    group   => root,
-    mode    => 0755,
-    content => template("bootstrapping/saysomething.erb")
-  }
-
 } # close boot module

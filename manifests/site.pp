@@ -21,21 +21,18 @@ node 'raspberrypi.chello.ie' {
 	include boot
 }
 node 'puppet' {
-  include packages::server
+  	include packages::server
 	include runway
 	include users::puppet
 	include boot
-  include basefiles
-  include docker
-  include network::interfaces
+	include basefiles
+  	include docker
+  	include network::interfaces
 }
 node 'michael-S500CA'{
 	include packages::workstation
 	include boot
 }
 node default {
-	include users
-	include users_and_groups
-	include basefiles
-	include boot
+	boot::identify
 }
