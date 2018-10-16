@@ -8,11 +8,6 @@ import 'runway'
 import 'docker'
 import 'nodes/*.pp'
 
-class users_and_groups {
-	group { "svn" : ensure => present }
-	group { "erova" : ensure => present }
-	}
-
 node 'raspberrypi.chello.ie' {
 	include users::pi 
 	include packages::server
