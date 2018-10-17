@@ -6,6 +6,7 @@ alias ll='ls -ltr --color'
 alias gopup='cd /etc/puppet'
 alias puprun='sudo puppet agent -t'
 alias puptest='sudo puppet agent -t --noop'
+alias pullpup='sudo git pull --rebase'
 alias gerp='grep'
 if [[ `whoami` == 'michael' ]] && [[ `hostname` == 'michael-S500CA']]
 then 
