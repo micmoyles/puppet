@@ -24,7 +24,7 @@ node 'puppet' {
   	include docker
   	include network::interfaces
 }
-node 'michael-S500CA' {
+node 'mmoyles-workstation-1' {
 	include packages::workstation
 	include boot::base
 }
