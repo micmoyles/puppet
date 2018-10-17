@@ -7,9 +7,13 @@ alias gopup='cd /etc/puppet'
 alias puprun='sudo puppet agent -t'
 alias puptest='sudo puppet agent -t --noop'
 alias gerp='grep'
-if [ `whoami` == 'mmoyles' ]
+if [[ `whoami` == 'michael' ]] && [[ `hostname` == 'michael-S500CA']]
 then 
-	alias goev='ssh -i /home/mmoyles/.ssh/amazon_linux.pem ubuntu@52.30.209.32'
+	alias gopup='cd $HOME/workspace/puppet'
+	alias gogo='cd $HOME/worksspace/go'
+	alias gohang='cd $HOME/workspace/hanger'
+	alias gorun='cd $HOME/workspace/runway'
+	alias gohack='cd $HOME/workspace/codeAcademy/hackerrank'
 fi
 if [ $HOSTNAME == 'puppet' ]
 then
