@@ -9,7 +9,7 @@ alias puprun='sudo puppet agent -t'
 alias puptest='sudo puppet agent -t --noop'
 alias pullpup='sudo git pull --rebase'
 alias gerp='grep'
-if [[ `whoami` == 'michael' ]] && [[ `hostname` == 'michael-S500CA']]
+if [[ `whoami` == 'michael' ]] && [[ `hostname` == 'michael-S500CA' ]]
 then 
 	alias gopup='cd $HOME/workspace/puppet'
 	alias gogo='cd $HOME/worksspace/go'
@@ -17,7 +17,7 @@ then
 	alias gorun='cd $HOME/workspace/runway'
 	alias gohack='cd $HOME/workspace/codeAcademy/hackerrank'
 fi
-if [ $HOSTNAME == 'puppet' ]
+if [[] $HOSTNAME == 'puppet' ]]
 then
 	alias gopup='cd /etc/puppet'
 else 
