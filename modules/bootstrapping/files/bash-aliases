@@ -17,7 +17,7 @@ then
 	alias gorun='cd $HOME/workspace/runway'
 	alias gohack='cd $HOME/workspace/codeAcademy/hackerrank'
 fi
-if [[] $HOSTNAME == 'puppet' ]]
+if [[ $HOSTNAME == 'puppet' ]]
 then
 	alias gopup='cd /etc/puppet'
 else 
