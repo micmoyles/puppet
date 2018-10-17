@@ -24,10 +24,10 @@ node 'puppet' {
   	include docker
   	include network::interfaces
 }
-node 'michael-S500CA'{
+node 'michael-S500CA' {
 	include packages::workstation
-	include boot
+	include boot::base
 }
 node default {
-	boot::identify
+	include boot::identify
 }
