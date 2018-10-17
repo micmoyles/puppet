@@ -51,60 +51,33 @@ class boot::base inherits boot::identify {
 		group => root,
 		mode  => 0755,
 		source => 'puppet:///modules/bootstrapping/motd';
-}
+	}
 	file{'/etc/bash.bashrc':
 		ensure => file,
 		owner => root,
 		group => root,
 		mode  => 0755,
 		source => 'puppet:///modules/bootstrapping/bashrc-all';
-}
+	}
 	file{'/etc/profile':
 		ensure => file,
 		owner => root,
 		group => root,
 		mode  => 0755,
 		source => 'puppet:///modules/bootstrapping/profile-all';
-}
-			file { '/etc/vim/vimrc.local':
+	}
+	file { '/etc/vim/vimrc.local':
 		ensure => file,
 		owner => root,
 		group => root,
 		mode  => 0755,
 		source => 'puppet:///modules/bootstrapping/vimrc.local';
 	}
-	case $hostname{
-	raspberrypi: {
-		file{'/etc/iampi':
-			ensure => file,
-			owner => root,
-			group => root,
-			mode  => 0755,
-			source => 'puppet:///modules/bootstrapping/profile-all';
-		}
-		file{'/etc/bash.aliases':
-			ensure => file,
-			owner => root,
-			group => root,
-			mode  => 0755,
-			source => 'puppet:///modules/bootstrapping/bash-aliases';
-			}	
-		      }
-	puppet: {
-		file{'/etc/iampuppet':
-			ensure => file,
-			owner => root,
-			group => root,
-			mode  => 0755,
-			source => 'puppet:///modules/bootstrapping/profile-all';
-		    }	
-		file{'/etc/bash.aliases':
-			ensure => file,
-			owner => root,
-			group => root,
-			mode  => 0755,
-			source => 'puppet:///modules/bootstrapping/bash-aliases';
-			}
-		}
-  } # close hostname case
-} # close boot module
+	file{'/etc/bash.aliases':
+		ensure => file,
+		owner => root,
+		group => root,
+		mode  => 0755,
+		source => 'puppet:///modules/bootstrapping/bash-aliases';
+	}		
+} # close boot::base module
