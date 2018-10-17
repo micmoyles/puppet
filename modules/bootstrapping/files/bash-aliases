@@ -1,3 +1,4 @@
+# placed by puppet
 alias web='cd /var/www/'
 alias logs='cd /var/log/'
 alias data='cd /mnt/data'
