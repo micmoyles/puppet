@@ -37,23 +37,23 @@ class hanger {
 	package { "libmysqlclient-dev": ensure => present }
 	package { "postgresql": ensure => present }
 	package { "postgresql-contrib": ensure => present }
-	file { "erova packages directory":
-		path => '/home/erova/packages',
+	file { "user packages directory":
+		path => '/usr/local/packages',
 		ensure => directory,
 		mode => 0755,
-		owner => erova,
-		group => erova
+		owner => root,
+		group => root
 }
-	file { "erova python packages directory":
-		path => '/home/erova/packages/python',
+	file { "python packages directory":
+		path => '/usr/local/packages/python',
 		ensure => directory,
 		mode => 0755,
-		owner => erova,
-		group => erova
+		owner => root,
+		group => root
 }
 	file { "stomp files":
-		require => File['/home/erova/packages/python'],
-		path => '/home/erova/packages/python/stomp',
+		require => File['/usr/local/packages/python'],
+		path => '/usr/local/packages/python/stomp',
 		source => 'puppet:///modules/erova-hanger/stomp/',
 		recurse => true,
  }
