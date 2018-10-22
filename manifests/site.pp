@@ -27,6 +27,7 @@ node 'puppet' {
 node 'mmoyles-workstation-1' {
 	include packages::workstation
 	include boot::base
+	include docker
 }
 node default {
 	include boot::identify
