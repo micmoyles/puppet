@@ -26,7 +26,8 @@ class docker {
 		owner => root,
 		group => root,
 		mode  => 0755,
-		source => 'puppet:///modules/docker/docker.list',
+		#source => 'puppet:///modules/docker/docker.list',
+		content => template('docker/docker.list.erb'),
     before => Exec['Get apt-key'];
 	}
 

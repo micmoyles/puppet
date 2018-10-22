@@ -1,0 +1,7 @@
+#deb https://download.docker.com/linux/ubuntu wheezy stable
+<% if hostname == 'puppet' then -%>
+deb [arch=armhf] https://download.docker.com/linux/raspbian jessie edge
+<% else -%>
+# deb-src [arch=amd64] https://download.docker.com/linux/ubuntu trusty stable
+deb [arch=amd64] https://download.docker.com/linux/ubuntu trusty stable
+<% end -%>
