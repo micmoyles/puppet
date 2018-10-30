@@ -8,13 +8,7 @@ import 'runway'
 import 'docker'
 import 'nodes/*.pp'
 
-node 'raspberrypi.chello.ie' {
-	include users::pi 
-	include packages::server
-	include users_and_groups
-	include directories::home::pi
-	include boot
-}
+
 node 'puppet' {
   	include packages::server
 	include runway
