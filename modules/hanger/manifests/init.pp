@@ -27,7 +27,7 @@ $hanger_directories = ['/var/www/hanger/','/var/www/hanger/plant_data/']
 #
 # Copyright 2016 Michael Moyles
 #
-class hanger {
+class hanger::base {
 # this module needs work, the symlinks should be created - not added to a bash file
 	service { "apache2": ensure => running }
 	package { "mysql-server": ensure => present }
@@ -37,6 +37,7 @@ class hanger {
 	package { "libmysqlclient-dev": ensure => present }
 	package { "postgresql": ensure => present }
 	package { "postgresql-contrib": ensure => present }
+	
 	file { "user packages directory":
 		path => '/usr/local/packages',
 		ensure => directory,
@@ -54,26 +55,26 @@ class hanger {
 	file { "stomp files":
 		require => File['/usr/local/packages/python'],
 		path => '/usr/local/packages/python/stomp',
-		source => 'puppet:///modules/erova-hanger/stomp/',
+		source => 'puppet:///modules/hanger/stomp/',
 		recurse => true,
  }
 	file { "database configuration script ":
 		path => '/usr/local/bin/setup_mysqldbs.sh',
-		source => 'puppet:///modules/erova-hanger/setup_mysqldbs.sh',
+		source => 'puppet:///modules/hanger/setup_mysqldbs.sh',
 		mode => 0755,
 		owner => root,
 		group => root
  }
 	file { "database configuration script 2 - temporary lets remember to tidy this all up":
 		path => '/usr/local/bin/setup_mysqldbs2.sh',
-		source => 'puppet:///modules/erova-hanger/setup_mysqldbs2.sh',
+		source => 'puppet:///modules/hanger/setup_mysqldbs2.sh',
 		mode => 0755,
 		owner => root,
 		group => root
  }
 	file { "database configuration commands - temporary lets remember to tidy this all up":
 		path => '/tmp/commands.sql',
-		source => 'puppet:///modules/erova-hanger/commands.sql',
+		source => 'puppet:///modules/hanger/commands.sql',
 		mode => 0755,
 		owner => root,
 		group => root
@@ -107,7 +108,7 @@ class hanger {
 	}
 	file { 'apache site configs':
 	 	path => '/etc/apache2/sites-available/001-hanger.conf',
-	 	source => 'puppet:///modules/erova-hanger/apache2/001-hanger',
+	 	source => 'puppet:///modules/hanger/apache2/001-hanger',
 	 	owner => root,
 	 	group => root,
 	 	mode => 0777
@@ -115,14 +116,14 @@ class hanger {
 	file { 'Enable 001-hanger':
 		notify => service['apache2'],
 	 	path => '/etc/apache2/sites-enabled/001-hanger.conf',
-	 	source => 'puppet:///modules/erova-hanger/apache2/001-hanger',
+	 	source => 'puppet:///modules/hanger/apache2/001-hanger',
 	 	owner => root,
 	 	group => root,
 	 	mode => 0777
 	 }
 	file { 'htpasswd access file':
 	 	path => '/etc/apache2/.htpasswd',
-	 	source => 'puppet:///modules/erova-hanger/apache2/htpasswd',
+	 	source => 'puppet:///modules/hanger/apache2/htpasswd',
 	 	owner => root,
 	 	group => root,
 	 	mode => 0777
