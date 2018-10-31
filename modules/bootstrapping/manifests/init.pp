@@ -41,7 +41,7 @@ class boot::identify {
     owner   => root,
     group   => root,
     mode    => 0755,
-    content => template("bootstrapping/saysomething.erb")
+    content => template("bootstrapping/node_puppet_conf.erb")
   }
 }
 class boot::base inherits boot::identify {
