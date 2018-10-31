@@ -6,17 +6,19 @@ import 'mongo'
 import 'bootstrapping'
 import 'runway'
 import 'docker'
+import 'hanger'
 import 'nodes/*.pp'
 
 
 node 'puppet' {
   	include packages::server
-	include runway
 	include users::puppet
-	include boot
+	include boot::base
 	include basefiles
-  	include docker
   	include network::interfaces
+  	include runway
+  	include docker
+  	include hanger::base
 }
 node 'mmoyles-workstation-1' {
 	include packages::workstation
