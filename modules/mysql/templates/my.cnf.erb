@@ -44,7 +44,7 @@ skip-external-locking
 #
 # Instead of skip-networking the default is now to listen only on
 # localhost which is more compatible and is not less secure.
-bind-address		= 127.0.0.1
+bind-address		= 192.168.1.<%= node_id %>
 #
 # * Fine Tuning
 #
@@ -69,8 +69,8 @@ query_cache_size        = 16M
 # Both location gets rotated by the cronjob.
 # Be aware that this log type is a performance killer.
 # As of 5.1 you can enable the log at runtime!
-#general_log_file        = /var/log/mysql/mysql.log
-#general_log             = 1
+general_log_file        = /var/log/mysql/mysql.log
+general_log             = 1
 #
 # Error log - should be very few entries.
 #
