@@ -9,6 +9,8 @@ alias puprun='sudo puppet agent -t'
 alias puptest='sudo puppet agent -t --noop'
 alias pullpup='sudo git pull --rebase'
 alias gerp='grep'
+alias gst='git status'
+alias gitst='git status'
 if [[ `whoami` == 'michael' ]] && [[ `hostname` == 'mmoyles-workstation-1' ]]
 then 
 	alias gopup='cd $HOME/workspace/puppet'
